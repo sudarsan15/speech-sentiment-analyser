@@ -1,0 +1,42 @@
+
+   <% include common.ejs %>
+       <div class="row">
+        <a href="/list" class="btn btn-success">Reload</a> <hr/>
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Job Name</th>
+                    <th>Language</th>
+                    <th>Status</th>
+                    <th>Output Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0;i<data.length;i++){ %>
+                <tr>
+                    <td><%= data[i].TranscriptionJobName  %></td>
+                    <td><%= data[i].LanguageCode  %></td>
+                    <% if(data[i].TranscriptionJobStatus == 'COMPLETED' ){ %>
+                        <td ><p style="color:green">Completed</p></td>  
+                    <% }  else if(data[i].TranscriptionJobStatus == 'FAILED' ){ %>
+                      <td ><p style="color:red">FAILED</p></td> 
+                    <% } else {%>
+                        <td ><p style="color:orange">PENDING</p></td> 
+                    <% } %>
+                    <td><%= data[i].OutputLocationType  %></td> 
+                    <td>
+                    <% if(data[i].TranscriptionJobStatus == 'COMPLETED' ){ %>
+                        <button class="btn btn-info" name="analysisBtn" id="analysisBtn" onclick="analysisBtn(this)" data-jobname="<%= data[i].TranscriptionJobName %>" >Proceed to analysis</button>
+                    <% } else { %> 
+                        <p>Waiting to complete</p> 
+                    <% } %> 
+                    </td>    
+                </tr>
+                <% } %>
+            </tbody>
+        </table>    
+    </div> 
+    <script src="../js/main.js"></script> 
+  </body>
+</html>    

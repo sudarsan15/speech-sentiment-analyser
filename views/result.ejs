@@ -1,0 +1,69 @@
+
+   <% include common.ejs %>
+       <div class="row">
+       <div class="col-md-10">
+            <table class="table table-responsive ">
+
+                <tr>
+                    <th colspan="2"> Transcript</th>
+                    <td colspan="2"><%= transcript %></td>
+                </tr>
+            
+                <tr>
+                    <th colspan="2"> Dominan Language</th>
+                    <td colspan="2"><%= result.Languages[0]['LanguageCode'] %></td>
+                </tr>
+                <tr>
+                    <th colspan="4">Sentiment Analysis </th>
+                </tr>
+                <tr>
+                   <td colspan="2">Overall sentiment </td> 
+                   <td colspan="2"><%= result.sentiment.Sentiment %></td>
+                </tr>
+                <tr>
+                   <td>Positive </td>
+                   <td><%= result.sentiment.SentimentScore.Positive %></td>
+                   <td>Negative </td>
+                   <td><%= result.sentiment.SentimentScore.Negative %></td>
+                </tr>
+                <tr>
+                   <td>Neutral </td>
+                   <td><%= result.sentiment.SentimentScore.Neutral %></td>
+                   <td>Mixed </td>
+                   <td><%= result.sentiment.SentimentScore.Mixed %></td> 
+                </tr>
+                <tr>
+                    <th colspan="4">Entities </th>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <th>Text</th>
+                    <th colspan="2">Score</th>
+                </tr>
+                 <tr>   
+                    <% for(let i = 0;i<result.entities.Entities.length;i++ ){  %>
+                        <td><%=result.entities.Entities[i].Type  %></td>
+                        <td><%=result.entities.Entities[i].Text  %></td>
+                        <td colspan="2"><%=result.entities.Entities[i].Score  %></td>
+                        </tr>   
+                    <% } %>
+                 <tr>
+                    <th colspan="4">Key Phrases </th>
+                </tr>    
+                <tr>
+                    <th colspan="2">Text </th>
+                    <th colspan="2">Score</th>
+                </tr> 
+                <tr>   
+                    <% for(let i = 0;i<result.keyphrases.KeyPhrases.length;i++ ){  %>
+                        <td colspan="2"><%=result.keyphrases.KeyPhrases[i].Text  %></td>
+                        <td colspan="2"><%=result.keyphrases.KeyPhrases[i].Score  %></td>
+                        </tr>   
+                    <% } %>
+                 <tr>
+            </table>
+        </div>        
+    </div> 
+    <script src="../js/main.js"></script> 
+  </body>
+</html>    
