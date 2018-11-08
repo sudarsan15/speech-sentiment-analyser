@@ -7,7 +7,7 @@ The process has two main steps
 1. uploading audio file , which will be automatically converted into transcripts
 2. Once step1 is completed , you can do sentiment analysis on a click of a button
 
-##Prerequisite
+## Prerequisite
 1. AWS Account 
 2. Create IAM User via IAM console with policy supporting Transcribe,Comprehend and S3
 3. Generate the 'AccessKey' and 'AccessSecretKey'
