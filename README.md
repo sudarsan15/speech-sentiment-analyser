@@ -1,10 +1,11 @@
 # speech-sentiment-analyser
-Speech Sentiment Analyser (SSA) is Machine Learning & Artificial Intelligence powered tool which will help you study the user emotions via voice and gives you a detail insight into to what user describes.
 
-SSA will help you analysis audio speech and creates a transcripts from audio file which inturn will be used to derive the sentiment of user. SSA provides you deep insight of what user is speaking.
+Speech Sentiment Analyzer (SSA) is ML & AI powered tool which will help to analyse the sentiment in the audio file using AWS Transcribe and comprehend. It gives a detailed insight to what user describes.
+SSA will help you analysis audio speech and creates a transcripts from audio file which in-turn will be used to derive the sentiment of user.
 
 The process has two main steps
-1. uploading audio file , which will be automatically converted into transcripts
+
+1. Uploading  an audio file , which will be automatically converted into transcripts.
 2. Once step1 is completed , you can do sentiment analysis on a click of a button
 
 ## Prerequisite
